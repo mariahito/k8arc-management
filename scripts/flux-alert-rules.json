@@ -1,0 +1,112 @@
+[
+  {
+    "alert": "HelmRepositoryNotReady",
+    "expression": "sum by (cluster, exported_namespace, name) (gotk_resource_info{ready=\"false\", customresource_kind=\"helmrepository\"}) > 0",
+    "for": "PT5M",
+    "labels": {
+      "description": "helmrepository reconciliation failing for last 5 minutes."
+    },
+    "annotations": {
+      "description": "helmrepository reconciliation failing for last 5 minutes."
+    },
+    "enabled": true,
+    "severity": 3,
+    "resolve-configuration": {
+      "autoResolved": true,
+      "timeToResolve": "PT10M"
+    },
+    "actions": [
+      {
+        "actionGroupId": "/subscriptions/7f96f0d8-48ba-478a-8ff4-fd8af2ada7d8/resourceGroups/rg-arc-k8s-lab-20261111/providers/microsoft.insights/actionGroups/fluxRuleActionGroup"
+      }
+    ]
+  },
+  {
+    "alert": "BucketNotReady",
+    "expression": "sum by (cluster, exported_namespace, name) (gotk_resource_info{ready=\"false\", customresource_kind=\"bucket\"}) > 0",
+    "for": "PT5M",
+    "labels": {
+      "description": "bucket reconciliation failing for last 5 minutes."
+    },
+    "annotations": {
+      "description": "bucket reconciliation failing for last 5 minutes."
+    },
+    "enabled": true,
+    "severity": 3,
+    "resolve-configuration": {
+      "autoResolved": true,
+      "timeToResolve": "PT10M"
+    },
+    "actions": [
+      {
+        "actionGroupId": "/subscriptions/7f96f0d8-48ba-478a-8ff4-fd8af2ada7d8/resourceGroups/rg-arc-k8s-lab-20261111/providers/microsoft.insights/actionGroups/fluxRuleActionGroup"
+      }
+    ]
+  },
+  {
+    "alert": "GitRepositoryNotReady",
+    "expression": "sum by (cluster, exported_namespace, name) (gotk_resource_info{ready=\"false\", customresource_kind=\"gitrepository\"}) > 0",
+    "for": "PT5M",
+    "labels": {
+      "description": "gitrepository reconciliation failing for last 5 minutes."
+    },
+    "annotations": {
+      "description": "gitrepository reconciliation failing for last 5 minutes."
+    },
+    "enabled": true,
+    "severity": 3,
+    "resolve-configuration": {
+      "autoResolved": true,
+      "timeToResolve": "PT10M"
+    },
+    "actions": [
+      {
+        "actionGroupId": "/subscriptions/7f96f0d8-48ba-478a-8ff4-fd8af2ada7d8/resourceGroups/rg-arc-k8s-lab-20261111/providers/microsoft.insights/actionGroups/fluxRuleActionGroup"
+      }
+    ]
+  },
+  {
+    "alert": "KustomizationNotReady",
+    "expression": "sum by (cluster, exported_namespace, name) (gotk_resource_info{ready=\"false\", customresource_kind=\"kustomization\"}) > 0",
+    "for": "PT5M",
+    "labels": {
+      "description": "kustomization reconciliation failing for last 5 minutes."
+    },
+    "annotations": {
+      "description": "kustomization reconciliation failing for last 5 minutes."
+    },
+    "enabled": true,
+    "severity": 3,
+    "resolve-configuration": {
+      "autoResolved": true,
+      "timeToResolve": "PT10M"
+    },
+    "actions": [
+      {
+        "actionGroupId": "/subscriptions/7f96f0d8-48ba-478a-8ff4-fd8af2ada7d8/resourceGroups/rg-arc-k8s-lab-20261111/providers/microsoft.insights/actionGroups/fluxRuleActionGroup"
+      }
+    ]
+  },
+  {
+    "alert": "HelmReleaseNotReady",
+    "expression": "sum by (cluster, exported_namespace, name) (gotk_resource_info{ready=\"false\", customresource_kind=\"helmrelease\"}) > 0",
+    "for": "PT5M",
+    "labels": {
+      "description": "helmrelease reconciliation failing for last 5 minutes."
+    },
+    "annotations": {
+      "description": "helmrelease reconciliation failing for last 5 minutes."
+    },
+    "enabled": true,
+    "severity": 3,
+    "resolve-configuration": {
+      "autoResolved": true,
+      "timeToResolve": "PT10M"
+    },
+    "actions": [
+      {
+        "actionGroupId": "/subscriptions/7f96f0d8-48ba-478a-8ff4-fd8af2ada7d8/resourceGroups/rg-arc-k8s-lab-20261111/providers/microsoft.insights/actionGroups/fluxRuleActionGroup"
+      }
+    ]
+  }
+]

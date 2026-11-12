@@ -1,0 +1,42 @@
+kind: ConfigMap
+apiVersion: v1
+data:
+  schema-version:
+    #string.used by agent to parse config. supported versions are {v1, v2}. Configs with other schema versions will be rejected by the agent.
+    v2
+  config-version:
+    #string.used by customer to keep track of this config file's version in their source control/repository (max allowed 10 chars, other chars will be truncated)
+    ver1
+  cluster-metrics: |-
+    default-targets-scrape-enabled: |-
+      kubelet = true
+      coredns = false
+      cadvisor = true
+      kubeproxy = false
+      kubestate = true
+      nodeexporter = true
+      windowsexporter = false
+      windowskubeproxy = false
+      kappiebasic = true
+      prometheuscollectorhealth = false
+    pod-annotation-based-scraping: |-
+      podannotationnamespaceregex = "flux-system|podinfo"
+    default-targets-scrape-interval-settings: |-
+      kubelet = "30s"
+      coredns = "30s"
+      cadvisor = "30s"
+      kubeproxy = "30s"
+      kubestate = "30s"
+      nodeexporter = "30s"
+      windowsexporter = "30s"
+      windowskubeproxy = "30s"
+      kappiebasic = "30s"
+      prometheuscollectorhealth = "30s"
+      podannotations = "30s"
+  controlplane-metrics: |-
+    default-targets-scrape-enabled: |-
+      apiserver = false
+      etcd = false
+metadata:
+  name: ama-metrics-settings-configmap
+  namespace: kube-system
